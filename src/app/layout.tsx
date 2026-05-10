@@ -15,22 +15,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SaxSchool — 30 kunda saksafon chalishni o'rganing",
+  title: "NotaShop — Musiqa notalar do'koni",
   description:
-    "Online saksafon kursi: 30 kun davomida har kuni 1 soat nazariy, 2 soat amaliy mashg'ulot. HD video darslar va PDF notalar.",
-  keywords: [
-    "saksafon",
-    "saxophone",
-    "online kurs",
-    "musiqa",
-    "jazz",
-    "nota o'qish",
-  ],
-  openGraph: {
-    title: "SaxSchool — Saksafon online akademiyasi",
-    description: "30 kunlik mukammal saksafon kursi.",
-    type: "website",
-  },
+    "Klassik, jazz, pop va boshqa janrlardagi notalar, kitoblar va audio yozuvlar. Onlayn xarid qiling, darhol yuklab oling.",
 };
 
 export default function RootLayout({
@@ -40,9 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="uz" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="min-h-screen bg-jazz-gradient font-sans">
-        {children}
-      </body>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }

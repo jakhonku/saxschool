@@ -1,44 +1,47 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Music2 } from "lucide-react";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
-      {/* Brand panel with saxophone image */}
-      <div className="hidden lg:flex relative overflow-hidden flex-col justify-between p-12">
-        <Image
-          src="https://images.unsplash.com/photo-1573871924421-c321b1e8cabb?w=1600&auto=format&fit=crop&q=85"
-          alt="Saksafon"
-          fill
-          priority
-          className="object-cover"
-          sizes="50vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-950/70 to-midnight-950/40" />
+    <div className="min-h-screen grid lg:grid-cols-2 bg-ink-50">
+      <div className="hidden lg:flex relative overflow-hidden flex-col justify-between p-12 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-700 text-ink-50">
+        <svg
+          viewBox="0 0 600 800"
+          preserveAspectRatio="xMidYMid slice"
+          className="absolute inset-0 w-full h-full opacity-25"
+        >
+          <defs>
+            <pattern id="staff2" x="0" y="0" width="600" height="80" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="10" x2="600" y2="10" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
+              <line x1="0" y1="22" x2="600" y2="22" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
+              <line x1="0" y1="34" x2="600" y2="34" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
+              <line x1="0" y1="46" x2="600" y2="46" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
+              <line x1="0" y1="58" x2="600" y2="58" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="600" height="800" fill="url(#staff2)" />
+          <text x="60" y="180" fontSize="180" fill="#e69f24" fontFamily="serif">♪</text>
+          <text x="280" y="320" fontSize="160" fill="#f4d488" fontFamily="serif">♫</text>
+          <text x="120" y="500" fontSize="180" fill="#e69f24" fontFamily="serif">♩</text>
+          <text x="340" y="660" fontSize="160" fill="#f4d488" fontFamily="serif">♬</text>
+        </svg>
 
         <Link href="/" className="flex items-center gap-2 relative z-10">
-          <div className="grid h-9 w-9 place-items-center rounded-full bg-brass-shine text-midnight-950">
-            <Music2 className="h-5 w-5" strokeWidth={2.5} />
-          </div>
-          <span className="font-display text-xl font-bold">
-            Sax<span className="brass-text">School</span>
+          <span className="grid h-9 w-9 place-items-center rounded-lg bg-amber-500">
+            <Music2 className="h-5 w-5" strokeWidth={2.2} />
           </span>
+          <span className="font-display text-xl font-semibold">NotaShop</span>
         </Link>
 
         <div className="relative z-10">
-          <div className="text-6xl text-brass-400/60 mb-4 font-serif leading-none">"</div>
-          <p className="font-display text-3xl text-midnight-50 leading-tight max-w-md">
-            Musiqa o'rganishning eng zamonaviy va to'liq yo'li. 30 kunda haqiqiy o'zgarish.
+          <p className="font-display text-3xl leading-tight max-w-md">
+            Klassik, jazz va pop notalar. Bir joyda — barcha musiqachi uchun.
           </p>
-          <p className="mt-6 text-sm text-brass-200">
-            — SaxSchool jamoasi
-          </p>
+          <p className="mt-6 text-sm text-amber-200">— NotaShop</p>
         </div>
       </div>
 
-      {/* Form panel */}
-      <div className="flex items-center justify-center p-6 lg:p-12 bg-midnight-950">
+      <div className="flex items-center justify-center p-6 lg:p-12">
         <div className="w-full max-w-md">{children}</div>
       </div>
     </div>

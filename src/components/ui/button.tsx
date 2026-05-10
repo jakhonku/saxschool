@@ -3,18 +3,19 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-400/60 disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-900/30 disabled:opacity-40 disabled:pointer-events-none",
   {
     variants: {
       variant: {
         primary:
-          "bg-brass-shine text-midnight-950 hover:shadow-[0_10px_40px_-10px_rgba(239,196,78,0.6)] hover:-translate-y-0.5",
+          "bg-ink-900 text-ink-50 hover:bg-ink-800 active:scale-[0.98]",
         secondary:
-          "bg-midnight-800 text-midnight-50 hover:bg-midnight-700 border border-brass-400/20",
-        ghost:
-          "text-midnight-100 hover:text-brass-300 hover:bg-brass-400/5",
+          "bg-ink-100 text-ink-900 hover:bg-ink-200 active:scale-[0.98]",
+        ghost: "text-ink-700 hover:text-ink-900",
         outline:
-          "border border-brass-400/40 text-brass-300 hover:bg-brass-400/10",
+          "border border-ink-900/15 text-ink-900 hover:border-ink-900/40 hover:bg-ink-100/50",
+        amber:
+          "bg-amber-500 text-white hover:bg-amber-600 active:scale-[0.98]",
       },
       size: {
         sm: "h-9 px-4 text-sm",

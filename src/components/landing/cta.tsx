@@ -3,31 +3,19 @@ import { Button } from "@/components/ui/button";
 
 export function CTA() {
   return (
-    <section className="relative py-32">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl brass-border glass-strong p-12 md:p-20 text-center">
-          <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-brass-500/30 blur-3xl" />
-          <div className="absolute -bottom-32 -left-32 h-64 w-64 rounded-full bg-brass-700/30 blur-3xl" />
-
-          <div className="relative">
-            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
-              30 kundan keyin{" "}
-              <span className="brass-text">siz ham</span> chaolasiz
-            </h2>
-            <p className="mt-4 text-midnight-200 text-lg max-w-2xl mx-auto">
-              Hech qachon kech emas. Bugun boshlang, bir oydan keyin sevimli kuyingizni chalib yuring.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Link href="/register">
-                <Button size="lg">Kursni boshlash</Button>
-              </Link>
-              <Link href="/#curriculum">
-                <Button variant="outline" size="lg">
-                  Dasturni ko'rish
-                </Button>
-              </Link>
-            </div>
-          </div>
+    <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24">
+      <div className="rounded-3xl bg-gradient-to-br from-amber-100 via-amber-50 to-ink-50 border border-black/[0.06] p-10 sm:p-16 text-center">
+        <h2 className="font-display text-3xl sm:text-5xl font-semibold text-ink-900">
+          Birinchi mahsulotingizni tanlang
+        </h2>
+        <p className="mt-4 max-w-xl mx-auto text-ink-600">
+          Yuzlab notalar, kitoblar va audio yozuvlar — bir joyda. Onlayn xarid,
+          tezkor yuklab olish.
+        </p>
+        <div className="mt-8 flex justify-center gap-3">
+          <Link href="/shop">
+            <Button size="lg" className="px-10">Do'konga o'tish</Button>
+          </Link>
         </div>
       </div>
     </section>

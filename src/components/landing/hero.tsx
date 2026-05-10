@@ -1,121 +1,106 @@
-"use client";
-
 import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Play, Star, Award, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Music } from "lucide-react";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Background image of saxophone */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1573871924421-c321b1e8cabb?w=2400&auto=format&fit=crop&q=85"
-          alt="Saksafon"
-          fill
-          priority
-          className="object-cover object-center opacity-40"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight-950 via-midnight-950/85 to-midnight-950/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-transparent to-midnight-950/60" />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-32 lg:pt-32 lg:pb-40">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl"
-        >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-brass-400/30 bg-midnight-950/60 backdrop-blur-md px-4 py-1.5">
-            <span className="flex h-2 w-2 rounded-full bg-brass-400 animate-pulse" />
-            <span className="text-xs font-medium text-brass-200">
-              2,400+ o'quvchi tanladi · 4.9 ⭐
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-50/50 via-ink-50 to-ink-50" />
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7">
+            <span className="inline-flex items-center gap-2 rounded-full border border-black/[0.08] bg-white/60 backdrop-blur px-3 py-1 text-xs text-ink-700">
+              <Music className="h-3 w-3" />
+              Notalar · Kitoblar · Audio
             </span>
+            <h1 className="mt-6 font-display display text-5xl sm:text-6xl lg:text-7xl font-semibold text-ink-900">
+              Musiqa notalar do'koni
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-ink-600 leading-relaxed">
+              Klassik, jazz, pop va boshqa janrlardagi sifatli notalar va musiqa
+              kitoblari. Onlayn xarid qiling, bir necha soniyada yuklab oling.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/shop">
+                <Button size="lg">
+                  Do'konga kirish
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/shop?type=note">
+                <Button variant="outline" size="lg">
+                  Notalarni ko'rish
+                </Button>
+              </Link>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-8 text-sm text-ink-600">
+              <div>
+                <div className="text-2xl font-semibold text-ink-900">100+</div>
+                <div className="mt-0.5 text-xs">Mahsulotlar</div>
+              </div>
+              <div>
+                <div className="text-2xl font-semibold text-ink-900">PDF / MP3</div>
+                <div className="mt-0.5 text-xs">Yuqori sifat</div>
+              </div>
+              <div>
+                <div className="text-2xl font-semibold text-ink-900">Click</div>
+                <div className="mt-0.5 text-xs">Tezkor to'lov</div>
+              </div>
+            </div>
           </div>
 
-          <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight">
-            Saksafon
-            <br />
-            chalishni
-            <br />
-            <span className="brass-text">o'rganing.</span>
-          </h1>
-
-          <p className="mt-8 max-w-xl text-lg sm:text-xl text-midnight-100 leading-relaxed">
-            30 kunda noldan jazz solosigacha. Har kuni{" "}
-            <span className="text-brass-300 font-semibold">1 soat nazariya</span>{" "}
-            va{" "}
-            <span className="text-brass-300 font-semibold">2 soat amaliyot</span>.
-            HD video darslar, professional notalar.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/register">
-              <Button size="lg">
-                <Play className="h-4 w-4" fill="currentColor" />
-                Hoziroq boshlash
-              </Button>
-            </Link>
-            <Link href="/#curriculum">
-              <Button variant="outline" size="lg">
-                Dasturni ko'rish
-              </Button>
-            </Link>
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[3/4] rounded-3xl bg-gradient-to-br from-ink-900 to-ink-700 p-8 shadow-2xl shadow-ink-900/20 overflow-hidden">
+              <svg
+                viewBox="0 0 400 500"
+                className="absolute inset-0 w-full h-full opacity-90"
+                preserveAspectRatio="xMidYMid slice"
+              >
+                <defs>
+                  <pattern
+                    id="staff"
+                    x="0"
+                    y="0"
+                    width="400"
+                    height="80"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <line x1="0" y1="10" x2="400" y2="10" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+                    <line x1="0" y1="22" x2="400" y2="22" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+                    <line x1="0" y1="34" x2="400" y2="34" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+                    <line x1="0" y1="46" x2="400" y2="46" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+                    <line x1="0" y1="58" x2="400" y2="58" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+                  </pattern>
+                </defs>
+                <rect width="400" height="500" fill="url(#staff)" />
+                <text x="50" y="120" fontSize="140" fill="#e69f24" fontFamily="serif">
+                  ♪
+                </text>
+                <text x="180" y="200" fontSize="100" fill="#e69f24" fontFamily="serif">
+                  ♫
+                </text>
+                <text x="80" y="320" fontSize="120" fill="#f4d488" fontFamily="serif">
+                  ♩
+                </text>
+                <text x="240" y="400" fontSize="110" fill="#e69f24" fontFamily="serif">
+                  ♬
+                </text>
+              </svg>
+              <div className="relative z-10 h-full flex flex-col justify-end">
+                <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-5">
+                  <p className="text-xs text-amber-200 uppercase tracking-wider">
+                    Tavsiya etilgan
+                  </p>
+                  <p className="mt-1 text-white font-display text-xl">
+                    Klassik notalar to'plami
+                  </p>
+                  <p className="mt-1 text-white/70 text-sm">Mozart · Bach · Chopin</p>
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* Trust badges */}
-          <div className="mt-14 flex flex-wrap gap-x-10 gap-y-6">
-            <Stat icon={<Clock />} value="90+" label="soat dars" />
-            <div className="hidden sm:block w-px bg-brass-400/20" />
-            <Stat icon={<Award />} value="30" label="kun rejasi" />
-            <div className="hidden sm:block w-px bg-brass-400/20" />
-            <Stat icon={<Star />} value="4.9" label="reyting" />
-          </div>
-        </motion.div>
-
-        {/* Floating note decorations */}
-        <motion.div
-          className="hidden lg:block absolute right-12 top-1/4 text-brass-400/40 text-7xl font-serif"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          ♪
-        </motion.div>
-        <motion.div
-          className="hidden lg:block absolute right-32 top-1/2 text-brass-300/30 text-6xl font-serif"
-          animate={{ y: [0, -15, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        >
-          ♫
-        </motion.div>
+        </div>
       </div>
     </section>
-  );
-}
-
-function Stat({
-  icon,
-  value,
-  label,
-}: {
-  icon: React.ReactNode;
-  value: string;
-  label: string;
-}) {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="grid h-10 w-10 place-items-center rounded-full border border-brass-400/30 bg-midnight-950/60 text-brass-300 backdrop-blur-md [&>svg]:h-4 [&>svg]:w-4">
-        {icon}
-      </div>
-      <div>
-        <div className="font-display text-2xl font-bold">{value}</div>
-        <div className="text-xs text-midnight-300">{label}</div>
-      </div>
-    </div>
   );
 }
