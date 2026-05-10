@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply bg-midnight-950 text-midnight-50 antialiased;
+}
+
+body {
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Maxsus saksafon-jazz stillar */
+.brass-text {
+  background: linear-gradient(135deg, #f5dd8d 0%, #efc44e 30%, #d28e16 50%, #efc44e 75%, #f5dd8d 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+.glass {
+  background: rgba(20, 23, 41, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(239, 196, 78, 0.15);
+}
+
+.glass-strong {
+  background: rgba(20, 23, 41, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(239, 196, 78, 0.2);
+}
+
+.brass-border {
+  position: relative;
+}
+.brass-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(239, 196, 78, 0.6), rgba(168, 104, 16, 0.2), rgba(239, 196, 78, 0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+::selection {
+  background: rgba(239, 196, 78, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0c19;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #864c11, #d28e16);
+  border-radius: 8px;
+}
